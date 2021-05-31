@@ -7,7 +7,9 @@ researcher to analyze user’s veracity. Therefore, we propose TGFRAUD, an end-t
 mechanism to capture regular pattern for fraudsters on temporal networks. Experimental results on three real-world datasets indicates
 that TGFRAUD performs same or even better when competing with other rating-based models no matter on transductive or inductive
 settings. Meanwhile, TGFRAUD gives sufficient explainability on the decision of fraud identification via inspecting rating burstiness in a
-series of rating history.
+series of rating history. 
+
+More details and reseatch about TGFraud can be seen in [here](https://github.com/leo811121/TGFraud/blob/master/TGFraud.pdf).
 
 # result Average AUC Scores of Tenfold Cross-Validation
 
@@ -20,7 +22,21 @@ series of rating history.
 | GraphSage(rating & temporal) |0.912|0.839|0.862 |
 | TGFraud (temporal only)      |**0.967**|**0.902**|0.738 |
 
+# Code explanation
+[models](https://github.com/leo811121/TGFraud/tree/master/models) : TGFraud contains three modules. EdgeSage is for
+aggregating neighbor and edge level information. Temporal encoder is for capturing burstiness in temporal series rating history. Temporal-edge aggregator generates node
+embeddings possessing both neighbor and temporal series information
+- **EdgeSage** -> [gnn_model.py](https://github.com/leo811121/TGFraud/blob/master/models/gnn_model.py), [egsage.py](https://github.com/leo811121/TGFraud/blob/master/models/egsage.py)
+- **Temporal aggregator** -> [encoder_temporal.py](https://github.com/leo811121/TGFraud/blob/master/models/encoder_temporal.py), [transformer_encoder.py](https://github.com/leo811121/TGFraud/blob/master/models/transformer_encoder.py)
+- **Temporal-edge aggregator** -> [encoder_hybrid.py](https://github.com/leo811121/TGFraud/blob/master/models/encoder_hybrid.py)
+
+[network_data](https://github.com/leo811121/TGFraud/tree/master/network_data) This directory contains three dataset(OTC, ALPHA, AMAZON) and data-preprocessing file.
+
+[gnn_training.py](https://github.com/leo811121/TGFraud/blob/master/training/gnn_training.py) This file runs model training and AUC evaluation.
+
+
+
 # Run the code
 ```
-!python TGFRAUD/training
+!python TGFRAUD/train.py --dataset alpha
 ```

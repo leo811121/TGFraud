@@ -9,7 +9,7 @@ that TGFRAUD performs same or even better when competing with other rating-based
 settings. Meanwhile, TGFRAUD gives sufficient explainability on the decision of fraud identification via inspecting rating burstiness in a
 series of rating history.
 
-- **result** 
+- **result** Average AUC Scores of Tenfold Cross-Validation
 
 |            Dataset           | OTC |ALPHA|AMAZON|
 | -----------------------------|-----|-----|------|

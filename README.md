@@ -9,7 +9,7 @@ that TGFRAUD performs same or even better when competing with other rating-based
 settings. Meanwhile, TGFRAUD gives sufficient explainability on the decision of fraud identification via inspecting rating burstiness in a
 series of rating history.
 
-# **result** Average AUC Scores of Tenfold Cross-Validation
+# result Average AUC Scores of Tenfold Cross-Validation
 
 |            Dataset           | OTC |ALPHA|AMAZON|
 | -----------------------------|-----|-----|------|
@@ -19,3 +19,8 @@ series of rating history.
 | GAT (rating & temporal)      |0.912|0.839|0.862 |
 | GraphSage(rating & temporal) |0.912|0.839|0.862 |
 | TGFraud (temporal only)      |**0.967**|**0.902**|0.738 |
+
+# Run the code
+```
+!python TGFRAUD/training
+```

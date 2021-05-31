@@ -18,4 +18,4 @@ series of rating history.
 | RGCN (rating & temporal)     |0.912|0.839|0.862 |
 | GAT (rating & temporal)      |0.912|0.839|0.862 |
 | GraphSage(rating & temporal) |0.912|0.839|0.862 |
-| TGFraud (temporal only)      |0.967|0.902|0.738 |
+| TGFraud (temporal only)      |**0.967**|**0.902**|0.738 |
